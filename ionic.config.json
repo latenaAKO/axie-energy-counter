@@ -1,0 +1,7 @@
+{
+  "name": "energy-counter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
