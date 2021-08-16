@@ -15,7 +15,7 @@
 		<Shortcuts />
 
 		<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-			<ion-fab-button>
+			<ion-fab-button color="dark" size="small">
 				<ion-icon :icon="icons.ellipsisHorizontal"></ion-icon>
 			</ion-fab-button>
 			<ion-fab-list side="top">

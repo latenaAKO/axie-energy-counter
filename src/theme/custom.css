@@ -1,5 +1,5 @@
 .counter {
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .counter__number {
@@ -28,15 +28,21 @@
 }
 
 .keycode__letter {
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 	background-color: rgba(0,0,0,.4);
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	text-transform: uppercase;
-	font-size: 2rem;
+	font-size: 1rem;
 	border-radius: 5px;
 	color: var(--ion-color-primary-contrast);
 	margin-right: 1rem;
+}
+
+@media (min-width: 768px) {
+	.counter {
+		margin-top: 100px;
+	}
 }
