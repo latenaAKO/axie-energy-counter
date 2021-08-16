@@ -1,18 +1,19 @@
 <template>
   <ion-page>
-	<ion-header :translucent="true">
+	<ion-header class="ion-no-border" :translucent="true" no-border >
+		<ion-toolbar>
+			<ion-title>
+				<ion-img class="header-main__logo" src="assets/icon/icon.png"></ion-img>
+			</ion-title>
+		</ion-toolbar>
 	</ion-header>
 	
 	<ion-content :fullscreen="true">
-	  <ion-header collapse="condense">
-		<ion-toolbar>
-		  <ion-title size="large">Blank</ion-title>
-		</ion-toolbar>
-	  </ion-header>
 		
 		<Counter />
-		
-	
+
+		<Shortcuts />
+
 		<ion-fab vertical="bottom" horizontal="center" slot="fixed">
 			<ion-fab-button>
 				<ion-icon :icon="icons.ellipsisHorizontal"></ion-icon>
@@ -36,7 +37,8 @@ import {
 	IonPage,
 	IonTitle,
 	IonFab,
-	IonFabButton
+	IonFabButton,
+	IonImg
 } from '@ionic/vue';
 
 import {
@@ -45,6 +47,7 @@ import {
 } from 'ionicons/icons'
 
 import Counter from '../components/Counter.vue'
+import Shortcuts from '../components/Shortcuts.vue'
 
 import { defineComponent } from 'vue';
 
@@ -58,9 +61,11 @@ export default defineComponent({
 	IonFab,
 	IonFabButton,
 	Counter,
+	Shortcuts,
 	IonGrid,
 	IonCol,
 	IonRow,
+	IonImg
   },
 
 	data() {
