@@ -6,12 +6,12 @@
 	font-size: 120px;
 }
 
-/* .header-main {
-	background-image: none;
-} */
+.header-main {
+	padding: 20px 0;
+}
 
 .header-main__logo {
-	height: 40px;
+	height: 30px;
 }
 
 .shortcuts {
@@ -44,5 +44,9 @@
 @media (min-width: 768px) {
 	.counter {
 		margin-top: 100px;
+	}
+
+	.header-main__logo {
+		height: 40px;
 	}
 }
