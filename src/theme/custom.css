@@ -4,6 +4,7 @@
 
 .counter__number {
 	font-size: 120px;
+	line-height: 1;
 }
 
 .header-main {
@@ -15,7 +16,7 @@
 }
 
 .shortcuts {
-
+	margin-top: 1rem;
 }
 
 .shortcuts__list {

@@ -5,6 +5,10 @@ const actions = {
 	
 	resetEnergy({commit}) {
 		commit('RESET_ENERGY')
+	},
+
+	setOption({commit}, option) {
+		commit('SET_OPTION', option)
 	}
 }
 

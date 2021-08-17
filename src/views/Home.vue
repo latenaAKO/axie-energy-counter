@@ -12,14 +12,15 @@
 		
 		<Counter />
 
-		<Shortcuts />
+		<Shortcuts v-if="options.showShortcuts" />
 
 		<ion-fab vertical="bottom" horizontal="center" slot="fixed">
 			<ion-fab-button color="dark" size="small">
 				<ion-icon :icon="icons.ellipsisHorizontal"></ion-icon>
 			</ion-fab-button>
 			<ion-fab-list side="top">
-				<ion-fab-button @click="reset()"><ion-icon :icon="icons.refreshOutline"></ion-icon></ion-fab-button>
+				<ion-fab-button @click="toggleShortcuts()" :color="options.showShortcuts ? 'primary' : 'dark'"><ion-icon :icon="icons.listOutline"></ion-icon></ion-fab-button>
+				<ion-fab-button @click="reset()" color="dark"><ion-icon :icon="icons.refreshOutline"></ion-icon></ion-fab-button>
 			</ion-fab-list>
 		</ion-fab>
 
@@ -43,13 +44,15 @@ import {
 
 import {
 	ellipsisHorizontal,
-	refreshOutline
+	refreshOutline,
+	listOutline
 } from 'ionicons/icons'
 
 import Counter from '../components/Counter.vue'
 import Shortcuts from '../components/Shortcuts.vue'
 
 import { defineComponent } from 'vue';
+import { mapGetters } from 'vuex'
 
 export default defineComponent({
   name: 'Home',
@@ -72,7 +75,8 @@ export default defineComponent({
 		return {
 			icons: {
 				ellipsisHorizontal,
-				refreshOutline
+				refreshOutline,
+				listOutline
 			}
 		}
 	},
@@ -84,8 +88,21 @@ export default defineComponent({
 	methods: {
 		reset() {
 			this.$store.dispatch('setEnergy', 3)
+		},
+
+		toggleShortcuts() {
+			this.$store.dispatch('setOption', {
+				key: 'showShortcuts',
+				value: !this.options.showShortcuts
+			})
 		}
 	},
+
+	computed: {
+		...mapGetters({
+			options: 'options'
+		})
+	}
 
 });
 </script>

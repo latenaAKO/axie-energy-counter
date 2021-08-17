@@ -1,7 +1,7 @@
 <template>
 	<ion-grid class="shortcuts">
 		<ion-row class="ion-justify-content-center">
-			<ion-list class="shortcuts__list">
+			<ion-list class="shortcuts__list" lines="none">
 				<ion-item v-for="shortcut in shortcuts" :key="shortcut.letter">
 					<ion-label><Keycode :letter="shortcut.letter" :label="shortcut.label" /></ion-label>
 				</ion-item>

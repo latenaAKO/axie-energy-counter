@@ -101,6 +101,14 @@ export default {
 		...mapGetters({
 			energy: 'energy'
 		})
+	},
+
+	watch: {
+		energy(energy) {
+			if(energy >= 10) {
+				this.$store.dispatch('setEnergy', 10)
+			}
+		}
 	}
 }
 </script>
