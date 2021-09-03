@@ -25,10 +25,20 @@ import '@ionic/vue/css/display.css';
 import './theme/variables.css';
 import './theme/custom.css';
 
+import VueGtag from "vue-gtag";
+
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
   .use(store)
+
+  if(process.env.VUE_APP_GOOGLE_ANALYTICS_ID) {
+	  console.log('UA: ', process.env.VUE_APP_GOOGLE_ANALYTICS_ID)
+	  app.use(VueGtag, {
+		config: { id: process.env.VUE_APP_GOOGLE_ANALYTICS_ID }
+	  });
+  }
   
 router.isReady().then(() => {
   app.mount('#app');
